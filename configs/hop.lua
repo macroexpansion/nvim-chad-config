@@ -1,4 +1,3 @@
-print('fdsfsdfdsfdsf')
 local status, hop = pcall(require, 'hop')
 if (not status) then return end
 

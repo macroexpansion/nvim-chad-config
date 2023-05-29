@@ -6,7 +6,6 @@ local plugins = {
             require('trouble').setup()
         end,
     },
-
     {
         'phaazon/hop.nvim',
         lazy = false,
@@ -14,7 +13,6 @@ local plugins = {
             require 'custom.configs.hop'
         end,
     },
-
     {
         'echasnovski/mini.nvim',
         lazy = false,
@@ -22,7 +20,6 @@ local plugins = {
             require 'custom.configs.mini'
         end,
     },
-
     -- this opts will extend the default opts
     {
         'nvim-treesitter/nvim-treesitter',
@@ -43,7 +40,6 @@ local plugins = {
             },
         },
     },
-
     -- if you load some function or module within your opt, wrap it with a function
     {
         'nvim-telescope/telescope.nvim',
@@ -59,16 +55,14 @@ local plugins = {
             },
         },
     },
-
     {
         'folke/which-key.nvim',
-        -- keys = { "<leader>", '"', "'", "`", "c", "v" },
         init = function()
-            require('core.utils').load_mappings 'whichkey'
+            require 'custom.mappings'
         end,
         config = function(_, opts)
             dofile(vim.g.base46_cache .. 'whichkey')
-            require("which-key").setup(opts)
+            require('which-key').setup(opts)
         end,
     }
 }

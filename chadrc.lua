@@ -1,4 +1,4 @@
----@type ChadrcConfig 
+---@type ChadrcConfig
 local M = {}
 
 M.plugins = 'custom.plugins'
