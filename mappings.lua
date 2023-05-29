@@ -4,7 +4,17 @@ local M = {}
 
 M.disabled = {
     n = {
-        ["<leader>fw"] = "",
+        ['<leader>fw'] = '',
+        ['<leader>ma'] = '',
+        ['<leader>pt'] = '',
+        ['<leader>gt'] = '',
+        ['<leader>cm'] = '',
+        [']c'] = '',
+        ['[c'] = '',
+        ['<leader>rh'] = '',
+        ['<leader>ph'] = '',
+        ['<leader>gb'] = '',
+        ['<leader>td'] = '',
     }
 }
 
@@ -272,6 +282,7 @@ M.telescope = {
         ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
         ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
         ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+        ["<leader>fma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
 
         -- git
         ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
@@ -282,8 +293,6 @@ M.telescope = {
 
         -- theme switcher
         ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
-
-        ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
     },
 }
 
@@ -358,18 +367,18 @@ M.whichkey = {
     plugin = true,
 
     n = {
-        ["<leader>wK"] = {
+        ['<leader>wK'] = {
             function()
-                vim.cmd "WhichKey"
+                vim.cmd 'WhichKey'
             end,
-            "Which-key all keymaps",
+            'Which-key all keymaps',
         },
-        ["<leader>wk"] = {
+        ['<leader>wk'] = {
             function()
-                local input = vim.fn.input "WhichKey: "
-                vim.cmd("WhichKey " .. input)
+                local input = vim.fn.input 'WhichKey: '
+                vim.cmd('WhichKey ' .. input)
             end,
-            "Which-key query lookup",
+            'Which-key query lookup',
         },
     },
 }
@@ -401,10 +410,10 @@ M.gitsigns = {
 
     n = {
         -- Navigation through hunks
-        ["]c"] = {
+        ["<leader>hj"] = {
             function()
                 if vim.wo.diff then
-                    return "]c"
+                    return "<leader>hj"
                 end
                 vim.schedule(function()
                     require("gitsigns").next_hunk()
@@ -415,10 +424,10 @@ M.gitsigns = {
             opts = { expr = true },
         },
 
-        ["[c"] = {
+        ["<leader>hk"] = {
             function()
                 if vim.wo.diff then
-                    return "[c"
+                    return "<leader>hk"
                 end
                 vim.schedule(function()
                     require("gitsigns").prev_hunk()
@@ -430,32 +439,97 @@ M.gitsigns = {
         },
 
         -- Actions
-        ["<leader>rh"] = {
-            function()
-                require("gitsigns").reset_hunk()
-            end,
-            "Reset hunk",
-        },
-
-        ["<leader>ph"] = {
+        ["<leader>hp"] = {
             function()
                 require("gitsigns").preview_hunk()
             end,
             "Preview hunk",
         },
 
-        ["<leader>gb"] = {
+        ["<leader>hb"] = {
             function()
-                package.loaded.gitsigns.blame_line()
+                require("gitsigns").blame_line{ full = true }
             end,
             "Blame line",
         },
 
-        ["<leader>td"] = {
+        ["<leader>htb"] = {
+            function()
+                require("gitsigns").toggle_current_line_blame()
+            end,
+            "Toggle curren line blame",
+        },
+
+        ["<leader>htd"] = {
             function()
                 require("gitsigns").toggle_deleted()
             end,
             "Toggle deleted",
+        },
+
+        ["<leader>hs"] = {
+            function()
+                require("gitsigns").stage_hunk()
+            end,
+            "Stage hunk",
+        },
+
+        ["<leader>hr"] = {
+            function()
+                require("gitsigns").reset_hunk()
+            end,
+            "Reset hunk",
+        },
+
+        ["<leader>hS"] = {
+            function()
+                require("gitsigns").stage_buffer()
+            end,
+            "Stage buffer",
+        },
+
+        ["<leader>hR"] = {
+            function()
+                require("gitsigns").reset_buffer()
+            end,
+            "Reset buffer",
+        },
+
+        ["<leader>hu"] = {
+            function()
+                require("gitsigns").undo_stage_hunk()
+            end,
+            "Undo stage hunk",
+        },
+
+        ["<leader>hd"] = {
+            function()
+                require("gitsigns").diffthis()
+            end,
+            "Diff",
+        },
+
+        ["<leader>hD"] = {
+            function()
+                require("gitsigns").diffthis('~')
+            end,
+            "Diff HEAD",
+        },
+    },
+
+    v = {
+        ["<leader>hs"] = {
+            function()
+                require("gitsigns").stage_hunk()
+            end,
+            "Stage hunk",
+        },
+
+        ["<leader>hr"] = {
+            function()
+                require("gitsigns").reset_hunk()
+            end,
+            "Reset hunk",
         },
     },
 }
