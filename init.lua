@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.clipboard = ""
+
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4

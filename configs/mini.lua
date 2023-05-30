@@ -1,4 +1,4 @@
-require('mini.surround').setup({
+require 'mini.surround'.setup({
     mappings = {
         add = 'ma', -- Add surrounding in Normal and Visual modes
         delete = 'md', -- Delete surrounding
@@ -13,7 +13,7 @@ require('mini.surround').setup({
     },
 })
 -- require('mini.pairs').setup()
-require('mini.move').setup({
+require 'mini.move'.setup({
     mappings = {
         left = '<C-h>',
         right = '<C-l>',
@@ -21,13 +21,13 @@ require('mini.move').setup({
         up = '<C-k>',
     }
 })
--- require('mini.comment').setup()
-require('mini.basics').setup()
-require('mini.indentscope').setup()
-require('mini.bufremove').setup()
-require('mini.trailspace').setup()
+require 'mini.comment'.setup()
+require 'mini.basics'.setup()
+require 'mini.indentscope'.setup()
+require 'mini.bufremove'.setup()
+require 'mini.trailspace'.setup()
 -- require('mini.tabline').setup()
 
-require('mini.cursorword').setup()
+require 'mini.cursorword'.setup()
 vim.cmd('hi! link MiniCursorword Visual')
 vim.cmd('hi! MiniCursorwordCurrent gui=nocombine guifg=NONE guibg=NONE')

@@ -15,7 +15,31 @@ M.disabled = {
         ['<leader>ph'] = '',
         ['<leader>gb'] = '',
         ['<leader>td'] = '',
-    }
+        ['<leader>/'] = '',
+        ['<leader>x'] = '',
+        ['<leader>n'] = '',
+        ['<leader>rn'] = '',
+        ['gD'] = '',
+        ['gd'] = '',
+        ['K'] = '',
+        ['gi'] = '',
+        ['<leader>ls'] = '',
+        ['<leader>D'] = '',
+        ['<leader>ra'] = '',
+        ['<leader>ca'] = '',
+        ['gr'] = '',
+        ['<leader>f'] = '',
+        ['[d'] = '',
+        [']d'] = '',
+        ['<leader>q'] = '',
+        ['<leader>fm'] = '',
+        ['<leader>wa'] = '',
+        ['<leader>wr'] = '',
+        ['<leader>wl'] = '',
+    },
+    v = {
+        ['<leader>/'] = '',
+    },
 }
 
 M.general = {
@@ -45,10 +69,6 @@ M.general = {
         -- Copy all
         ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
-        -- line numbers
-        ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
-        ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
-
         -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
         -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
         -- empty mode is same as using <cmd> :map
@@ -64,7 +84,7 @@ M.general = {
     },
 
     t = {
-        ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+        ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
     },
 
     v = {
@@ -101,7 +121,7 @@ M.tabufline = {
         },
 
         -- close buffer + hide terminal buffer
-        ["<leader>x"] = {
+        ["dx"] = {
             function()
                 require("nvchad_ui.tabufline").close_buffer()
             end,
@@ -112,23 +132,6 @@ M.tabufline = {
 
 M.comment = {
     plugin = true,
-
-    -- toggle comment in both modes
-    n = {
-        ["<leader>/"] = {
-            function()
-                require("Comment.api").toggle.linewise.current()
-            end,
-            "Toggle comment",
-        },
-    },
-
-    v = {
-        ["<leader>/"] = {
-            "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-            "Toggle comment",
-        },
-    },
 }
 
 M.lspconfig = {
@@ -136,85 +139,93 @@ M.lspconfig = {
 
     -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
 
+    -- g = {
+    --         name = "LSP Saga",
+    --         r = { "<cmd>Lspsaga rename<CR>", "LSP Saga rename" },
+    --         a = { "<cmd>Lspsaga code_action<CR>", "LSP Saga code_action" },
+    --         f = { "<cmd>Lspsaga lsp_finder<CR>", "LSP Saga lsp_finder" },
+    --         d = { "<cmd>Lspsaga goto_definition<CR>", "LSP Saga goto_definition" },
+    --         p = { "<cmd>Lspsaga peek_definition<CR>", "LSP Saga peek_definition" },
+    --         k = { "<cmd>Lspsaga hover_doc<CR>", "LSP Saga hover_doc" },
     n = {
-        ["gD"] = {
+        ["<leader>gD"] = {
             function()
                 vim.lsp.buf.declaration()
             end,
             "LSP declaration",
         },
 
-        ["gd"] = {
+        ["<leader>gd"] = {
             function()
                 vim.lsp.buf.definition()
             end,
             "LSP definition",
         },
 
-        ["K"] = {
+        ["<leader>gK"] = {
             function()
                 vim.lsp.buf.hover()
             end,
             "LSP hover",
         },
 
-        ["gi"] = {
+        ["<leader>gi"] = {
             function()
                 vim.lsp.buf.implementation()
             end,
             "LSP implementation",
         },
 
-        ["<leader>ls"] = {
+        ["<leader>gs"] = {
             function()
                 vim.lsp.buf.signature_help()
             end,
             "LSP signature help",
         },
 
-        ["<leader>D"] = {
+        ["<leader>gt"] = {
             function()
                 vim.lsp.buf.type_definition()
             end,
             "LSP definition type",
         },
 
-        ["<leader>ra"] = {
+        ["<leader>gR"] = {
             function()
                 require("nvchad_ui.renamer").open()
             end,
             "LSP rename",
         },
 
-        ["<leader>ca"] = {
+        ["<leader>ga"] = {
             function()
                 vim.lsp.buf.code_action()
             end,
             "LSP code action",
         },
 
-        ["gr"] = {
+        ["<leader>gr"] = {
             function()
                 vim.lsp.buf.references()
             end,
             "LSP references",
         },
 
-        ["<leader>f"] = {
+        ["<leader>gx"] = {
             function()
                 vim.diagnostic.open_float { border = "rounded" }
             end,
             "Floating diagnostic",
         },
 
-        ["[d"] = {
+        ["<leader>gk"] = {
             function()
                 vim.diagnostic.goto_prev({ float = { border = "rounded" }})
             end,
             "Goto prev",
         },
 
-        ["]d"] = {
+        ["<leader>gj"] = {
             function()
                 vim.diagnostic.goto_next({ float = { border = "rounded" }})
             end,
@@ -228,33 +239,33 @@ M.lspconfig = {
             "Diagnostic setloclist",
         },
 
-        ["<leader>fm"] = {
+        ["<leader>gf"] = {
             function()
                 vim.lsp.buf.format { async = true }
             end,
             "LSP formatting",
         },
 
-        ["<leader>wa"] = {
-            function()
-                vim.lsp.buf.add_workspace_folder()
-            end,
-            "Add workspace folder",
-        },
+        -- ["<leader>ga"] = {
+        --     function()
+        --         vim.lsp.buf.add_workspace_folder()
+        --     end,
+        --     "Add workspace folder",
+        -- },
+        --
+        -- ["<leader>wr"] = {
+        --     function()
+        --         vim.lsp.buf.remove_workspace_folder()
+        --     end,
+        --     "Remove workspace folder",
+        -- },
 
-        ["<leader>wr"] = {
-            function()
-                vim.lsp.buf.remove_workspace_folder()
-            end,
-            "Remove workspace folder",
-        },
-
-        ["<leader>wl"] = {
-            function()
-                print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            end,
-            "List workspace folders",
-        },
+        -- ["<leader>wl"] = {
+        --     function()
+        --         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        --     end,
+        --     "List workspace folders",
+        -- },
     },
 }
 
@@ -387,9 +398,9 @@ M.blankline = {
     plugin = true,
 
     n = {
-        ["<leader>cc"] = {
+        ['<leader>cc'] = {
             function()
-                local ok, start = require("indent_blankline.utils").get_current_context(
+                local ok, start = require 'indent_blankline.utils'.get_current_context(
                     vim.g.indent_blankline_context_patterns,
                     vim.g.indent_blankline_use_treesitter_scope
                 )
@@ -399,8 +410,7 @@ M.blankline = {
                     vim.cmd [[normal! _]]
                 end
             end,
-
-            "Jump to current context",
+            'Jump to current context',
         },
     },
 }
@@ -532,6 +542,37 @@ M.gitsigns = {
             "Reset hunk",
         },
     },
+}
+
+M.trouble = {
+    plugin = true,
+
+    n = {
+        ["<leader>xx"] = {
+            "<cmd>TroubleToggle<CR>",
+            "Trouble toggle"
+        },
+        ["<leader>xw"] = {
+            "<cmd>TroubleToggle workspace_diagnostics<CR>",
+            "Trouble in workspace"
+        },
+        ["<leader>xd"] = {
+            "<cmd>TroubleToggle document_diagnostics<CR>",
+            "Trouble in current file"
+        },
+        ["<leader>xl"] = {
+            "<cmd>TroubleToggle loclist<CR>",
+            "Trouble location list"
+        },
+        ["<leader>xq"] = {
+            "<cmd>TroubleToggle quickfix<CR>",
+            "Trouble quickfix"
+        },
+        ["<leader>xr"] = {
+            "<cmd>TroubleToggle lsp_references<CR>",
+            "Trouble references"
+        },
+    }
 }
 
 return M

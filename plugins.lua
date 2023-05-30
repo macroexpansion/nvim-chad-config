@@ -1,9 +1,11 @@
 local plugins = {
+    'nvim-telescope/telescope.nvim',
     {
         'folke/trouble.nvim',
         lazy = false,
         config = function()
-            require('trouble').setup()
+            require 'trouble'.setup()
+            require 'core.utils'.load_mappings 'trouble'
         end,
     },
     {
@@ -30,6 +32,7 @@ local plugins = {
                 'cpp',
                 'vim',
                 'lua',
+                'yaml',
                 'rust',
                 'bash',
                 'python',
@@ -42,20 +45,6 @@ local plugins = {
     },
     -- if you load some function or module within your opt, wrap it with a function
     {
-        'nvim-telescope/telescope.nvim',
-        -- opts = {
-        --     defaults = {
-        --         mappings = {
-        --             i = {
-        --                 ["<esc>"] = function(...)
-        --                     require("telescope.actions").close(...)
-        --                 end,
-        --             },
-        --         },
-        --     },
-        -- },
-    },
-    {
         'folke/which-key.nvim',
         init = function()
             require 'custom.mappings'
@@ -63,8 +52,30 @@ local plugins = {
         config = function(_, opts)
             dofile(vim.g.base46_cache .. 'whichkey') -- whichkey theme
             -- local wk = require('which-key').setup(opts)
-            local wk = require('which-key')
+            local wk = require 'which-key'
             wk.register(require 'custom.configs.whichkey')
+        end,
+    },
+    -- Download LSP server, linter, ... . Use :Mason to check plugings and :MasonInstallAll to install
+    {
+        'williamboman/mason.nvim',
+        -- lazy = false,
+        opts = {
+            ensure_installed = {
+                -- LSP server
+                'rust-analyzer',
+                'gopls',
+                'pyright',
+                'yaml-language-server',
+            },
+        },
+    },
+    -- LSP Config
+    {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require 'plugins.configs.lspconfig'
+            require 'custom.configs.lspconfig'
         end,
     }
 }
