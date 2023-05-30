@@ -30,7 +30,6 @@ lspconfig.rust_analyzer.setup {
             group = format_sync_group,
         })
     end,
-    cmd = { 'rustup run stable rust-analyzer' }
 }
 
 lspconfig.pyright.setup {
