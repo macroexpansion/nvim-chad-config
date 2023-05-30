@@ -22,6 +22,15 @@ local plugins = {
             require 'custom.configs.mini'
         end,
     },
+    {
+        "hrsh7th/nvim-cmp",
+        lazy = false,
+        opts = function()
+            local opt = require 'plugins.configs.cmp'
+            local new_mapping = require 'custom.configs.cmp'
+            return vim.tbl_deep_extend('force', opt, new_mapping)
+        end,
+    },
     -- this opts will extend the default opts
     {
         'nvim-treesitter/nvim-treesitter',

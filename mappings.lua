@@ -36,6 +36,7 @@ M.disabled = {
         ['<leader>wa'] = '',
         ['<leader>wr'] = '',
         ['<leader>wl'] = '',
+        ['<C-x>'] = '',
     },
     v = {
         ['<leader>/'] = '',
@@ -81,6 +82,8 @@ M.general = {
         -- new buffer
         ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
         ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+
+        ["Q"] = { "<nop>", "Disable Q" },
     },
 
     t = {
@@ -148,98 +151,98 @@ M.lspconfig = {
     --         p = { "<cmd>Lspsaga peek_definition<CR>", "LSP Saga peek_definition" },
     --         k = { "<cmd>Lspsaga hover_doc<CR>", "LSP Saga hover_doc" },
     n = {
-        ["<leader>gD"] = {
+        ["<leader>lD"] = {
             function()
                 vim.lsp.buf.declaration()
             end,
             "LSP declaration",
         },
 
-        ["<leader>gd"] = {
+        ["<leader>ld"] = {
             function()
                 vim.lsp.buf.definition()
             end,
             "LSP definition",
         },
 
-        ["<leader>gK"] = {
+        ["<leader>lK"] = {
             function()
                 vim.lsp.buf.hover()
             end,
             "LSP hover",
         },
 
-        ["<leader>gi"] = {
+        ["<leader>li"] = {
             function()
                 vim.lsp.buf.implementation()
             end,
             "LSP implementation",
         },
 
-        ["<leader>gs"] = {
+        ["<leader>ls"] = {
             function()
                 vim.lsp.buf.signature_help()
             end,
             "LSP signature help",
         },
 
-        ["<leader>gt"] = {
+        ["<leader>lt"] = {
             function()
                 vim.lsp.buf.type_definition()
             end,
             "LSP definition type",
         },
 
-        ["<leader>gR"] = {
+        ["<leader>lR"] = {
             function()
                 require("nvchad_ui.renamer").open()
             end,
             "LSP rename",
         },
 
-        ["<leader>ga"] = {
+        ["<leader>la"] = {
             function()
                 vim.lsp.buf.code_action()
             end,
             "LSP code action",
         },
 
-        ["<leader>gr"] = {
+        ["<leader>lr"] = {
             function()
                 vim.lsp.buf.references()
             end,
             "LSP references",
         },
 
-        ["<leader>gx"] = {
+        ["<leader>lx"] = {
             function()
                 vim.diagnostic.open_float { border = "rounded" }
             end,
             "Floating diagnostic",
         },
 
-        ["<leader>gk"] = {
+        ["<leader>lk"] = {
             function()
                 vim.diagnostic.goto_prev({ float = { border = "rounded" }})
             end,
             "Goto prev",
         },
 
-        ["<leader>gj"] = {
+        ["<leader>lj"] = {
             function()
                 vim.diagnostic.goto_next({ float = { border = "rounded" }})
             end,
             "Goto next",
         },
 
-        ["<leader>q"] = {
+        ["<leader>lq"] = {
             function()
                 vim.diagnostic.setloclist()
             end,
             "Diagnostic setloclist",
         },
 
-        ["<leader>gf"] = {
+        ["<leader>lf"] = {
             function()
                 vim.lsp.buf.format { async = true }
             end,
@@ -296,11 +299,11 @@ M.telescope = {
         ["<leader>fma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
 
         -- git
-        ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-        ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+        ["<leader>fc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+        ["<leader>fs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
 
         -- pick a hidden term
-        ["<leader>tt"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
+        ["<leader>ft"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
 
         -- theme switcher
         ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },

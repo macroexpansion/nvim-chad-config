@@ -4,7 +4,6 @@ local capabilities = require 'plugins.configs.lspconfig'.capabilities
 local lspconfig = require 'lspconfig'
 
 lspconfig.rust_analyzer.setup {
-    -- on_attach = on_attach,
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         local utils = require 'core.utils'
@@ -31,7 +30,7 @@ lspconfig.rust_analyzer.setup {
             group = format_sync_group,
         })
     end,
-    cmd = { '/home/nqduy13/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer' }
+    cmd = { 'rustup run stable rust-analyzer' }
 }
 
 lspconfig.pyright.setup {

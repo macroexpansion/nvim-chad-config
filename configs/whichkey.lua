@@ -3,8 +3,8 @@ return {
         f = {
             name = 'Telescope files'
         },
-        g = {
-            name = 'Telescope git'
+        l = {
+            name = 'LSP'
         },
         h = {
             name = 'Gitsigns',
@@ -12,5 +12,9 @@ return {
         x = {
             name = 'Trouble',
         },
+        t = {
+            name = 'Themes',
+        },
+
     },
 }
