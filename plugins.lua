@@ -95,6 +95,35 @@ local plugins = {
             require 'plugins.configs.lspconfig'
             require 'custom.configs.lspconfig'
         end,
+    },
+
+    {
+        'catppuccin/nvim',
+        lazy = true,
+        name = 'catppuccin'
+    },
+    -- LSP Saga
+    {
+        'glepnir/lspsaga.nvim',
+        lazy = true,
+        event = 'LspAttach',
+        config = function()
+            require 'lspsaga'.setup({
+                lightbulb = {
+                    enable = false,
+                    enable_in_insert = false,
+                },
+                ui = {
+                    kind = require 'catppuccin.groups.integrations.lsp_saga'.custom_kind(),
+                },
+            })
+        end,
+        dependencies = {
+            { 'nvim-tree/nvim-web-devicons' },
+            -- Please make sure you install markdown and markdown_inline parser
+            { 'nvim-treesitter/nvim-treesitter' },
+            { 'catppuccin/nvim' }
+        }
     }
 }
 

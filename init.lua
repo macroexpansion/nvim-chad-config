@@ -16,3 +16,9 @@ opt.relativenumber = true
 opt.nu = true
 opt.hlsearch = true
 opt.incsearch = true
+
+vim.api.nvim_create_autocmd('TermEnter', {
+    callback = function ()
+        -- vim.cmd("<Esc>")
+    end
+})

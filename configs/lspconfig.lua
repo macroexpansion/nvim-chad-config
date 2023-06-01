@@ -6,10 +6,16 @@ local lspconfig = require 'lspconfig'
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        local utils = require 'core.utils'
+        local format_sync_group = vim.api.nvim_create_augroup('Format', {})
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            pattern = { '*.rs' },
+            callback = function()
+                vim.lsp.buf.format { timeout_ms = 200, async = true }
+            end,
+            group = format_sync_group,
+        })
 
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
+        local utils = require 'core.utils'
 
         utils.load_mappings('lspconfig', { buffer = bufnr })
 
@@ -20,15 +26,6 @@ lspconfig.rust_analyzer.setup {
         if not utils.load_config().ui.lsp_semantic_tokens then
             client.server_capabilities.semanticTokensProvider = nil
         end
-
-        local format_sync_group = vim.api.nvim_create_augroup('Format', {})
-        vim.api.nvim_create_autocmd('BufWritePre', {
-            pattern = { '*.rs' },
-            callback = function()
-                vim.lsp.buf.format { timeout_ms = 200, async = true }
-            end,
-            group = format_sync_group,
-        })
     end,
 }
 

@@ -4,7 +4,7 @@ return {
             name = 'Telescope files'
         },
         l = {
-            name = 'LSP'
+            name = 'LSP and LSP Saga'
         },
         h = {
             name = 'Gitsigns',

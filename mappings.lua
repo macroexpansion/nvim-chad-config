@@ -141,15 +141,6 @@ M.lspconfig = {
     plugin = true,
 
     -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
-
-    -- g = {
-    --         name = "LSP Saga",
-    --         r = { "<cmd>Lspsaga rename<CR>", "LSP Saga rename" },
-    --         a = { "<cmd>Lspsaga code_action<CR>", "LSP Saga code_action" },
-    --         f = { "<cmd>Lspsaga lsp_finder<CR>", "LSP Saga lsp_finder" },
-    --         d = { "<cmd>Lspsaga goto_definition<CR>", "LSP Saga goto_definition" },
-    --         p = { "<cmd>Lspsaga peek_definition<CR>", "LSP Saga peek_definition" },
-    --         k = { "<cmd>Lspsaga hover_doc<CR>", "LSP Saga hover_doc" },
     n = {
         ["<leader>lD"] = {
             function()
@@ -163,6 +154,21 @@ M.lspconfig = {
                 vim.lsp.buf.definition()
             end,
             "LSP definition",
+        },
+
+        ["<leader>lh"] = {
+            "<cmd>Lspsaga hover_doc<CR>",
+            "LSP Saga hover_doc",
+        },
+
+        ["<leader>lf"] = {
+            "<cmd>Lspsaga lsp_finder<CR>",
+            "LSP Saga lsp_finder",
+        },
+
+        ["<leader>lgd"] = {
+            "<cmd>Lspsaga goto_definition<CR>",
+            "LSP Saga goto_definition",
         },
 
         ["<leader>lK"] = {
@@ -200,11 +206,14 @@ M.lspconfig = {
             "LSP rename",
         },
 
+        ["<leader>lgr"] = {
+            "<cmd>Lspsaga rename<CR>",
+            "LSP Saga rename",
+        },
+
         ["<leader>la"] = {
-            function()
-                vim.lsp.buf.code_action()
-            end,
-            "LSP code action",
+            "<cmd>Lspsaga code_action<CR>",
+            "LSP Saga code_action",
         },
 
         ["<leader>lr"] = {
@@ -242,11 +251,16 @@ M.lspconfig = {
             "Diagnostic setloclist",
         },
 
-        ["<leader>lf"] = {
+        ["<leader>lgf"] = {
             function()
                 vim.lsp.buf.format { async = true }
             end,
             "LSP formatting",
+        },
+
+        ["<leader>lp"] = {
+            "<cmd>Lspsaga peek_definition<CR>",
+            "LSP Saga peek_definition"
         },
 
         -- ["<leader>ga"] = {
