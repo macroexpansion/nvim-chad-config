@@ -1,12 +1,12 @@
 local plugins = {
     'nvim-telescope/telescope.nvim',
     {
-        "NvChad/nvterm",
+        'NvChad/nvterm',
         config = function(_, opts)
-            require "base46.term"
+            require 'base46.term'
             local new_opts = require 'custom.configs.nvterm'
             local merged_opts = vim.tbl_deep_extend('force', opts, new_opts)
-            require("nvterm").setup(merged_opts)
+            require 'nvterm'.setup(merged_opts)
         end,
     },
     {
@@ -32,7 +32,7 @@ local plugins = {
         end,
     },
     {
-        "hrsh7th/nvim-cmp",
+        'hrsh7th/nvim-cmp',
         lazy = false,
         opts = function()
             local opt = require 'plugins.configs.cmp'
