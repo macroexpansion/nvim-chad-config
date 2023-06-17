@@ -592,4 +592,29 @@ M.trouble = {
     }
 }
 
+M.dapui = {
+    plugin = true,
+
+    n = {
+         ["<leader>do"] = {
+            function()
+                require 'dapui'.open()
+            end,
+             "Open debugger"
+         },
+        ["<leader>dc"] = {
+            function()
+                require 'dapui'.close()
+            end,
+            "Close debugger"
+        },
+        ["<leader>dt"] = {
+            function()
+                require 'dapui'.toggle()
+            end,
+            "Toggle breaking point"
+        },
+    }
+}
+
 return M

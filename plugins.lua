@@ -77,10 +77,12 @@ local plugins = {
     -- Download LSP server, linter, ... . Use :Mason to check plugings and :MasonInstallAll to install
     {
         'williamboman/mason.nvim',
-        -- lazy = false,
+        lazy = false,
         opts = {
             ensure_installed = {
                 -- LSP server
+                'stylua',
+                'lua-language-server',
                 'rust-analyzer',
                 'gopls',
                 'pyright',
@@ -124,7 +126,20 @@ local plugins = {
             { 'nvim-treesitter/nvim-treesitter' },
             { 'catppuccin/nvim' }
         }
-    }
+    },
+    -- Debugger
+    {
+        'rcarriga/nvim-dap-ui',
+        lazy = false,
+        config = function()
+            require 'dapui'.setup()
+            require 'core.utils'.load_mappings 'dapui'
+        end,
+        dependencies = {
+            { 'mfussenegger/nvim-dap' },
+            { 'theHamsta/nvim-dap-virtual-text' }
+        }
+    },
 }
 
 return plugins

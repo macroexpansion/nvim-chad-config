@@ -15,6 +15,8 @@ return {
         t = {
             name = 'Themes',
         },
-
+        d = {
+            name = 'Debugger'
+        },
     },
 }
