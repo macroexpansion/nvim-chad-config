@@ -253,7 +253,7 @@ M.lspconfig = {
 
         ["<leader>lgf"] = {
             function()
-                vim.lsp.buf.format { async = true }
+                vim.lsp.buf.format { timeout_ms = 500 }
             end,
             "LSP formatting",
         },

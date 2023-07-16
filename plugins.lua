@@ -42,6 +42,13 @@ local plugins = {
     },
     -- this opts will extend the default opts
     {
+        'jose-elias-alvarez/null-ls.nvim',
+        event = 'VeryLazy',
+        opts = function()
+            require 'custom.configs.null-ls'
+        end,
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
         opts = {
             ensure_installed = {
