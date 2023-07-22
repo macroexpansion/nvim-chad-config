@@ -18,12 +18,18 @@ local plugins = {
         end,
     },
     {
-        'phaazon/hop.nvim',
-        lazy = false,
-        config = function()
-            require 'custom.configs.hop'
-        end,
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {},
     },
+    -- {
+    --     'phaazon/hop.nvim',
+    --     lazy = false,
+    --     config = function()
+    --         require 'custom.configs.hop'
+    --     end,
+    -- },
     {
         'echasnovski/mini.nvim',
         lazy = false,
