@@ -1,5 +1,13 @@
 local plugins = {
-    'nvim-telescope/telescope.nvim',
+    {
+        'nvim-telescope/telescope.nvim',
+        opts = function()
+            local opts = require 'plugins.configs.telescope'
+            local new_opts = require 'custom.configs.telescope'
+            local merged_opts = vim.tbl_deep_extend('force', opts, new_opts)
+            return merged_opts
+        end,
+    },
     {
         'NvChad/nvterm',
         config = function(_, opts)

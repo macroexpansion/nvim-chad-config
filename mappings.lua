@@ -298,6 +298,7 @@ M.nvimtree = {
     },
 }
 
+-- local telescope_actions = require 'telescope.actions'
 M.telescope = {
     plugin = true,
 
