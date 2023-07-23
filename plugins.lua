@@ -18,10 +18,32 @@ local plugins = {
         end,
     },
     {
-        "folke/flash.nvim",
-        event = "VeryLazy",
-        opts = {},
-        keys = {},
+        'folke/flash.nvim',
+        event = 'VeryLazy',
+        opts = {
+            modes = {
+                char = {
+                    jump_labels = true
+                }
+            },
+            label = {
+                uppercase = false,
+                rainbow = {
+                    enabled = true,
+                    shade = 9,
+                },
+            },
+        },
+        keys = {
+            {
+                '<leader>j',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require 'flash'.jump()
+                end,
+                desc = 'Flash Jump',
+            },
+        },
     },
     -- {
     --     'phaazon/hop.nvim',
