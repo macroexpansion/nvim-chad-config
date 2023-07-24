@@ -597,13 +597,13 @@ M.dapui = {
     plugin = true,
 
     n = {
-         ["<leader>do"] = {
+        ["<leader>do"] = {
             function()
                 require 'dapui'.open()
             end,
-             "Open debugger"
-         },
-        ["<leader>dc"] = {
+            "Open debugger"
+        },
+        ["<leader>dx"] = {
             function()
                 require 'dapui'.close()
             end,
@@ -613,7 +613,49 @@ M.dapui = {
             function()
                 require 'dapui'.toggle()
             end,
-            "Toggle breaking point"
+            "Toggle menu debugger"
+        },
+        ["<leader>db"] = {
+            function()
+                require 'dap'.toggle_breakpoint()
+            end,
+            "Toggle break point"
+        },
+        ["<leader>dB"] = {
+            function()
+                require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+            end,
+            "Toggle break point with log message"
+        },
+        ["<leader>dD"] = {
+            function()
+                require 'dap'.clear_breakpoints()
+            end,
+            "Clear all break points"
+        },
+        ["<leader>dc"] = {
+            function()
+                require 'dap'.continue()
+            end,
+            "Continue debugging"
+        },
+        ["<leader>du"] = {
+            function()
+                require 'dap'.step_over()
+            end,
+            "Step over debugging"
+        },
+        ["<leader>di"] = {
+            function()
+                require 'dap'.step_into()
+            end,
+            "Step into debugging"
+        },
+        ["<leader>dI"] = {
+            function()
+                require 'dap'.step_out()
+            end,
+            "Step out debugging"
         },
     }
 }

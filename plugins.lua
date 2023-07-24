@@ -195,7 +195,7 @@ local plugins = {
     -- Debugger
     {
         'rcarriga/nvim-dap-ui',
-        lazy = false,
+        event = 'VeryLazy',
         config = function()
             require 'dapui'.setup()
             require 'core.utils'.load_mappings 'dapui'
@@ -205,6 +205,28 @@ local plugins = {
             { 'theHamsta/nvim-dap-virtual-text' }
         }
     },
+    {
+        'leoluz/nvim-dap-go',
+        event = 'VeryLazy',
+        config = function()
+            require 'dap-go'.setup({
+                dap_configurations = {
+                    {
+                        type = "go",
+                        name = "Attach remote",
+                        mode = "remote",
+                        request = "attach",
+                    },
+                },
+                delve = {
+                    path = "dlv",
+                    initialize_timeout_sec = 20,
+                    port = "${port}",
+                    args = {},
+                },
+            })
+        end,
+    }
 }
 
 return plugins
