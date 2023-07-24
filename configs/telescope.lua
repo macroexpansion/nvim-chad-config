@@ -8,6 +8,7 @@ local M = {
                 ["<C-k>"] = actions.preview_scrolling_up,
                 ["<C-h>"] = actions.preview_scrolling_left,
                 ["<C-l>"] = actions.preview_scrolling_right,
+                ["o"] = actions.select_default,
             },
             i = {
                 ["<C-j>"] = actions.preview_scrolling_down,
