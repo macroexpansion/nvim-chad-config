@@ -3,7 +3,7 @@ if (not status) then return end
 
 hop.setup()
 
-vim.keymap.set('n', 'f', function()
+vim.keymap.set('n', '<leader>j', function()
     hop.hint_words()
 end, { remap = true })
 

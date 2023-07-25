@@ -19,7 +19,7 @@ local plugins = {
     },
     {
         'folke/trouble.nvim',
-        lazy = false,
+        event = 'VeryLazy',
         config = function()
             require 'trouble'.setup()
             require 'core.utils'.load_mappings 'trouble'
@@ -43,45 +43,45 @@ local plugins = {
             },
         },
         keys = {
-            {
-                '<leader>j',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require 'flash'.jump()
-                end,
-                desc = 'Flash Jump',
-            },
-            {
-                '<leader>s',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require 'flash'.jump({
-                        pattern = '.', -- initialize pattern with any char
-                        search = {
-                            mode = function(pattern)
-                                -- remove leading dot
-                                if pattern:sub(1, 1) == '.' then
-                                    pattern = pattern:sub(2)
-                                end
-                                -- return word pattern and proper skip pattern
-                                return ([[\<%s\w*\>]]):format(pattern), ([[\<%s]]):format(pattern)
-                            end,
-                        },
-                        -- select the range
-                        jump = { pos = 'range' },
-})
-                end,
-                desc = 'Flash Jump Any Word',
-            },
+            -- {
+            --     '<leader>j',
+            --     mode = { 'n', 'x', 'o' },
+            --     function()
+            --         require 'flash'.jump()
+            --     end,
+            --     desc = 'Flash Jump',
+            -- },
+            -- {
+            --     '<leader>s',
+            --     mode = { 'n', 'x', 'o' },
+            --     function()
+            --         require 'flash'.jump({
+            --             pattern = '.', -- initialize pattern with any char
+            --             search = {
+            --                 mode = function(pattern)
+            --                     -- remove leading dot
+            --                     if pattern:sub(1, 1) == '.' then
+            --                         pattern = pattern:sub(2)
+            --                     end
+            --                     -- return word pattern and proper skip pattern
+            --                     return ([[\<%s\w*\>]]):format(pattern), ([[\<%s]]):format(pattern)
+            --                 end,
+            --             },
+            --             -- select the range
+            --             jump = { pos = 'range' },
+            --         })
+            --     end,
+            --     desc = 'Flash Jump Any Word',
+            -- },
         },
     },
-    -- {
-    --     'phaazon/hop.nvim',
-    --     lazy = false,
-    --     config = function()
-    --         require 'custom.configs.hop'
-    --     end,
-    -- },
+    {
+        'phaazon/hop.nvim',
+        lazy = false,
+        config = function()
+            require 'custom.configs.hop'
+        end,
+    },
     {
         'echasnovski/mini.nvim',
         lazy = false,
@@ -129,6 +129,7 @@ local plugins = {
     -- if you load some function or module within your opt, wrap it with a function
     {
         'folke/which-key.nvim',
+        event = 'VeryLazy',
         init = function()
             require 'custom.mappings'
         end,
