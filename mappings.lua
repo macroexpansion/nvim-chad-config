@@ -37,6 +37,8 @@ M.disabled = {
         ['<leader>wr'] = '',
         ['<leader>wl'] = '',
         ['<C-x>'] = '',
+        ['<leader>h'] = '',
+        ['<leader>v'] = '',
     },
     v = {
         ['<leader>/'] = '',
@@ -337,19 +339,19 @@ M.nvterm = {
             "Toggle floating term",
         },
 
-        ["<A-h>"] = {
-            function()
-                require("nvterm.terminal").toggle "horizontal"
-            end,
-            "Toggle horizontal term",
-        },
-
-        ["<A-v>"] = {
-            function()
-                require("nvterm.terminal").toggle "vertical"
-            end,
-            "Toggle vertical term",
-        },
+        -- ["<A-h>"] = {
+        --     function()
+        --         require("nvterm.terminal").toggle "horizontal"
+        --     end,
+        --     "Toggle horizontal term",
+        -- },
+        --
+        -- ["<A-v>"] = {
+        --     function()
+        --         require("nvterm.terminal").toggle "vertical"
+        --     end,
+        --     "Toggle vertical term",
+        -- },
     },
 
     n = {
@@ -363,32 +365,24 @@ M.nvterm = {
 
         ["<A-h>"] = {
             function()
-                require("nvterm.terminal").toggle "horizontal"
+                require("nvterm.terminal").new "float"
             end,
-            "Toggle horizontal term",
+            "Create a new floating term",
         },
 
-        ["<A-v>"] = {
-            function()
-                require("nvterm.terminal").toggle "vertical"
-            end,
-            "Toggle vertical term",
-        },
-
-        -- new
-        ["<leader>h"] = {
-            function()
-                require("nvterm.terminal").new "horizontal"
-            end,
-            "New horizontal term",
-        },
-
-        ["<leader>v"] = {
-            function()
-                require("nvterm.terminal").new "vertical"
-            end,
-            "New vertical term",
-        },
+        -- ["<A-h>"] = {
+        --     function()
+        --         require("nvterm.terminal").toggle "horizontal"
+        --     end,
+        --     "Toggle horizontal term",
+        -- },
+        --
+        -- ["<A-v>"] = {
+        --     function()
+        --         require("nvterm.terminal").toggle "vertical"
+        --     end,
+        --     "Toggle vertical term",
+        -- },
     },
 }
 

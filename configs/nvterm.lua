@@ -3,13 +3,13 @@ return {
         type_opts = {
             float = {
                 relative = 'editor',
-                row = 0.0,
+                row = 0.3,
                 col = 0.0,
                 width = 1.0,
-                height = 0.9,
-                border = "single",
+                height = .67,
+                border = "none",
             },
-            horizontal = { location = "rightbelow", split_ratio = .77, },
+            horizontal = { location = "leftabove", split_ratio = .77, },
             vertical = { location = "rightbelow", split_ratio = .5 },
         }
     }
