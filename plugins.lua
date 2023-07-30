@@ -1,5 +1,14 @@
 local plugins = {
     {
+        "lukas-reineke/indent-blankline.nvim",
+        opts = function()
+            local opts = require('plugins.configs.others').blankline
+            local new_opts = require 'custom.configs.blankline'
+            local merged_opts = vim.tbl_deep_extend('force', opts, new_opts)
+            return merged_opts
+        end,
+    },
+    {
         'nvim-telescope/telescope.nvim',
         opts = function()
             local opts = require 'plugins.configs.telescope'
@@ -42,38 +51,7 @@ local plugins = {
                 },
             },
         },
-        keys = {
-            -- {
-            --     '<leader>j',
-            --     mode = { 'n', 'x', 'o' },
-            --     function()
-            --         require 'flash'.jump()
-            --     end,
-            --     desc = 'Flash Jump',
-            -- },
-            -- {
-            --     '<leader>s',
-            --     mode = { 'n', 'x', 'o' },
-            --     function()
-            --         require 'flash'.jump({
-            --             pattern = '.', -- initialize pattern with any char
-            --             search = {
-            --                 mode = function(pattern)
-            --                     -- remove leading dot
-            --                     if pattern:sub(1, 1) == '.' then
-            --                         pattern = pattern:sub(2)
-            --                     end
-            --                     -- return word pattern and proper skip pattern
-            --                     return ([[\<%s\w*\>]]):format(pattern), ([[\<%s]]):format(pattern)
-            --                 end,
-            --             },
-            --             -- select the range
-            --             jump = { pos = 'range' },
-            --         })
-            --     end,
-            --     desc = 'Flash Jump Any Word',
-            -- },
-        },
+        keys = {},
     },
     {
         'phaazon/hop.nvim',
