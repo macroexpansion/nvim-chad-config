@@ -6,7 +6,7 @@ return {
                 row = 0.3,
                 col = 0.0,
                 width = 1.0,
-                height = .67,
+                height = .65,
                 border = "none",
             },
             horizontal = { location = "leftabove", split_ratio = .77, },
