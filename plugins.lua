@@ -38,9 +38,12 @@ local plugins = {
         'folke/flash.nvim',
         event = 'VeryLazy',
         opts = {
+            search = {
+                multi_window = false,
+            },
             modes = {
                 char = {
-                    jump_labels = true
+                    jump_labels = true,
                 }
             },
             label = {
