@@ -1,5 +1,15 @@
 local plugins = {
     {
+        "nvim-tree/nvim-tree.lua",
+        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+        opts = function()
+            local opts = require "plugins.configs.nvimtree"
+            local new_opts = require "custom.configs.nvimtree"
+            local merged_opts = vim.tbl_deep_extend('force', opts, new_opts)
+            return merged_opts
+        end,
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         opts = function()
             local opts = require('plugins.configs.others').blankline
