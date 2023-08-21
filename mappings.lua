@@ -110,25 +110,10 @@ M.tabufline = {
     plugin = true,
 
     n = {
-        -- cycle through buffers
-        ["<tab>"] = {
-            function()
-                require("nvchad_ui.tabufline").tabuflineNext()
-            end,
-            "Goto next buffer",
-        },
-
-        ["<S-tab>"] = {
-            function()
-                require("nvchad_ui.tabufline").tabuflinePrev()
-            end,
-            "Goto prev buffer",
-        },
-
         -- close buffer + hide terminal buffer
         ["dx"] = {
             function()
-                require("nvchad_ui.tabufline").close_buffer()
+                require("nvchad.tabufline").close_buffer()
             end,
             "Close buffer",
         },
