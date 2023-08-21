@@ -1,10 +1,10 @@
 return {
     ['<leader>'] = {
         f = {
-            name = 'Telescope files'
+            name = 'Telescope files',
         },
         l = {
-            name = 'LSP and LSP Saga'
+            name = 'LSP and LSP Saga',
         },
         h = {
             name = 'Gitsigns',
@@ -16,7 +16,7 @@ return {
             name = 'Themes',
         },
         d = {
-            name = 'Debugger'
+            name = 'Debugger',
         },
     },
 }
