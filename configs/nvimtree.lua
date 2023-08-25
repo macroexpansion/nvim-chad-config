@@ -6,7 +6,7 @@ return {
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
     },
     renderer = {
         root_folder_label = true,
