@@ -15,17 +15,7 @@ lspconfig.rust_analyzer.setup {
             group = format_sync_group,
         })
 
-        local utils = require 'core.utils'
-
-        utils.load_mappings('lspconfig', { buffer = bufnr })
-
-        if client.server_capabilities.signatureHelpProvider then
-            require('nvchad_ui.signature').setup(client)
-        end
-
-        if not utils.load_config().ui.lsp_semantic_tokens then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
+        on_attach(client, bufnr)
     end,
 }
 
