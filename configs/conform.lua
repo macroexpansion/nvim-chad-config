@@ -6,6 +6,7 @@ conform.setup {
     python = { "isort", "black" },
     -- Use a sub-list to run only the first available formatter
     javascript = { "prettier" },
+    typescript = { "prettier" },
     lua = { "stylua" },
   },
   format_on_save = {
