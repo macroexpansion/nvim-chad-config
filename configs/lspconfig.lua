@@ -6,13 +6,11 @@ local lspconfig = require 'lspconfig'
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        local format_sync_group = vim.api.nvim_create_augroup('Format', {})
         vim.api.nvim_create_autocmd('BufWritePre', {
             pattern = { '*.rs' },
             callback = function()
                 vim.lsp.buf.format { timeout_ms = 500 }
             end,
-            group = format_sync_group,
         })
 
         on_attach(client, bufnr)
