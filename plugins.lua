@@ -133,6 +133,7 @@ local plugins = {
         -- LSP server
         "isort",
         "black",
+        "eslint_d",
         "prettier",
         "stylua",
         "lua-language-server",
@@ -221,6 +222,13 @@ local plugins = {
     lazy = false,
     config = function()
       require "custom.configs.conform"
+    end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    lazy = false,
+    config = function()
+      require "custom.configs.nvimlint"
     end,
   },
 }
