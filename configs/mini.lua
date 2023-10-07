@@ -15,10 +15,10 @@ require("mini.surround").setup {
 -- require('mini.pairs').setup()
 require("mini.move").setup {
   mappings = {
-    left = "<C-h>",
-    right = "<C-l>",
-    down = "<C-j>",
-    up = "<C-k>",
+    left = "<A-h>",
+    right = "<A-l>",
+    down = "<A-j>",
+    up = "<A-k>",
   },
 }
 require("mini.comment").setup()
