@@ -39,6 +39,7 @@ M.disabled = {
     ["<C-x>"] = "",
     ["<leader>h"] = "",
     ["<leader>v"] = "",
+    ["<A-h>"] = "",
   },
   v = {
     ["<leader>/"] = "",
@@ -348,12 +349,12 @@ M.nvterm = {
       "Toggle floating term",
     },
 
-    ["<A-h>"] = {
-      function()
-        require("nvterm.terminal").new "float"
-      end,
-      "Create a new floating term",
-    },
+    -- ["<A-h>"] = {
+    --   function()
+    --     require("nvterm.terminal").new "float"
+    --   end,
+    --   "Create a new floating term",
+    -- },
 
     -- ["<A-h>"] = {
     --     function()
