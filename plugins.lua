@@ -108,7 +108,26 @@ local plugins = {
         "typescript",
         "markdown_inline",
       },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-j>",
+          node_incremental = "<C-j>",
+          scope_incremental = false,
+          node_decremental = "<C-k>",
+        },
+      },
     },
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter-textobjects" },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    lazy = true,
+    config = function()
+      require "custom.configs.textobjects"
+    end,
   },
   -- if you load some function or module within your opt, wrap it with a function
   {
@@ -117,7 +136,7 @@ local plugins = {
     init = function()
       require "custom.mappings"
     end,
-    config = function(_, opts)
+    config = function()
       dofile(vim.g.base46_cache .. "whichkey") -- whichkey theme
       -- local wk = require('which-key').setup(opts)
       local wk = require "which-key"
