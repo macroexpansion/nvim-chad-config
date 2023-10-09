@@ -8,11 +8,17 @@ conform.setup {
     javascript = { "prettier" },
     typescript = { "prettier" },
     lua = { "stylua" },
+    rust = { "rustfmt" },
   },
   format_on_save = {
     timeout_ms = 500,
     async = false,
     lsp_fallback = true,
+  },
+  formatters = {
+    rustfmt = {
+      command = "rustfmt",
+    },
   },
 }
 
