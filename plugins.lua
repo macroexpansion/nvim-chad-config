@@ -111,10 +111,10 @@ local plugins = {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-j>",
-          node_incremental = "<C-j>",
+          init_selection = "<C-i>",
+          node_incremental = "<C-i>",
           scope_incremental = false,
-          node_decremental = "<C-k>",
+          node_decremental = "<BS>",
         },
       },
     },
