@@ -150,15 +150,18 @@ local plugins = {
     opts = {
       ensure_installed = {
         -- LSP server
-        "isort",
         "black",
         "eslint_d",
-        "prettier",
-        "stylua",
-        "lua-language-server",
-        "rust-analyzer",
+        "gofumpt",
+        "goimports",
+        "golines",
         "gopls",
+        "isort",
+        "lua-language-server",
+        "prettier",
         "pyright",
+        "rust-analyzer",
+        "stylua",
         "yaml-language-server",
       },
       automatic_installation = true,
