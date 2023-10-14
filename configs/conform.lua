@@ -19,25 +19,13 @@ conform.setup {
   formatters = {
     rustfmt = {
       command = "rustfmt",
+      args = { "--edition", "2021" },
     },
     gofmt = {
       command = "gofmt",
     },
   },
 }
-
--- Auto format command
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = "*",
---   callback = function(args)
---     conform.format {
---       bufnr = args.buf,
---       timeout_ms = 500,
---       async = false,
---       lsp_fallback = false,
---     }
---   end,
--- })
 
 vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
   conform.format {
