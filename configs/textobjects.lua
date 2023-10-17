@@ -9,8 +9,8 @@ require("nvim-treesitter.configs").setup {
         -- ["l="] = { query = "@assignment.lhs", desc = "left hand side part of an assignment" },
         ["r="] = { query = "@assignment.rhs", desc = "right hand side part of an assignment" },
 
-        ["am"] = { query = "@block.outer", desc = "a function invocation" },
-        ["im"] = { query = "@block.inner", desc = "a function invocation" },
+        ["am"] = { query = "@block.outer", desc = "a code block" },
+        ["im"] = { query = "@block.inner", desc = "a code block" },
 
         ["ai"] = { query = "@call.outer", desc = "a function invocation" },
         ["ii"] = { query = "@call.inner", desc = "a function invocation" },
