@@ -20,6 +20,9 @@ require("nvim-treesitter.configs").setup {
 
         ["ac"] = { query = "@class.outer", desc = "a class region" },
         ["ic"] = { query = "@class.inner", desc = "a class region" },
+
+        ["ar"] = { query = "@parameter.outer", desc = "a parameter" },
+        ["ir"] = { query = "@parameter.inner", desc = "a parameter" },
       },
     },
     swap = {
