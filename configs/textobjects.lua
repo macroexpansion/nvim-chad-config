@@ -23,6 +23,8 @@ require("nvim-treesitter.configs").setup {
 
         ["ar"] = { query = "@parameter.outer", desc = "a parameter" },
         ["ir"] = { query = "@parameter.inner", desc = "a parameter" },
+
+        ["an"] = { query = "@statement.outer", desc = "a statement" },
       },
     },
     swap = {
