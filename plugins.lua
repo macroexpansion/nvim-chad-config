@@ -151,6 +151,7 @@ local plugins = {
       ensure_installed = {
         -- LSP server
         "black",
+        "delve",
         "eslint_d",
         "gofumpt",
         "goimports",
