@@ -7,6 +7,6 @@ hop.setup()
 
 vim.keymap.set("n", "<leader>j", function()
   hop.hint_words()
-end, { remap = true })
+end, { remap = true, desc = "Hop" })
 
 -- local directions = require('hop.hint').HintDirection

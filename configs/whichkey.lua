@@ -1,22 +1,11 @@
 return {
   ["<leader>"] = {
-    f = {
-      name = "Telescope files",
-    },
-    l = {
-      name = "LSP and LSP Saga",
-    },
-    h = {
-      name = "Gitsigns",
-    },
-    x = {
-      name = "Trouble",
-    },
-    t = {
-      name = "Themes",
-    },
-    d = {
-      name = "Debugger",
-    },
+    f = "Telescope files",
+    l = "LSP and LSP Saga",
+    h = "Gitsigns",
+    x = "Trouble",
+    t = "Themes",
+    d = "Debugger",
+    c = "Current context and mapping cheatsheet",
   },
 }
