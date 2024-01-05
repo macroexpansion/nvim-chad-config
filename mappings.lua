@@ -68,6 +68,9 @@ M.general = {
     ["<C-j>"] = { "<C-w>j", "Window down" },
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
+    -- append ; at the end of current line
+    ["<C-;>"] = { ":norm A;<CR>", "Append ; at the end of current line" },
+
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
