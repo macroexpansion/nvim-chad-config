@@ -103,6 +103,7 @@ local plugins = {
         "rust",
         "bash",
         "python",
+        "prisma",
         "markdown",
         "javascript",
         "typescript",
