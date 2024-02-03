@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.guicursor = "i:block"
+
 opt.clipboard = ""
 
 opt.shiftwidth = 4
