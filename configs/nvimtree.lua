@@ -13,6 +13,7 @@ return {
     ignore = false,
   },
   renderer = {
+    group_empty = false,
     root_folder_label = true,
     highlight_git = true,
     highlight_opened_files = "none",
