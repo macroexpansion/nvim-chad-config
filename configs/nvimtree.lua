@@ -1,4 +1,8 @@
 return {
+  view = {
+    side = "right",
+    width = 50,
+  },
   actions = {
     open_file = {
       resize_window = true,
