@@ -18,3 +18,5 @@ opt.relativenumber = true
 opt.nu = true
 opt.hlsearch = true
 opt.incsearch = true
+
+vim.g.nvimtree_side = "right"
