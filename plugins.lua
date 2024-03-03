@@ -50,10 +50,12 @@ local plugins = {
     opts = {
       search = {
         multi_window = false,
+        -- autojump = true,
       },
       modes = {
         char = {
           jump_labels = true,
+          multi_line = false,
         },
       },
       label = {
