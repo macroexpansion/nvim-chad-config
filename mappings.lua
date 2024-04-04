@@ -314,6 +314,9 @@ M.telescope = {
 
     -- theme switcher
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
+
+    -- resume
+    ["<leader>fr"] = { "<cmd> Telescope resume <CR>", "Find files" },
   },
 }
 

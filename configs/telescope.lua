@@ -2,8 +2,11 @@ local actions = require "telescope.actions"
 
 local M = {
   defaults = {
+    initial_mode = "normal",
     mappings = {
       n = {
+        ["<A-j>"] = actions.cycle_history_next,
+        ["<A-k>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.preview_scrolling_down,
         ["<C-k>"] = actions.preview_scrolling_up,
         ["<C-h>"] = actions.preview_scrolling_left,
