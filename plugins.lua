@@ -213,6 +213,7 @@ local plugins = {
         },
         ui = {
           kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+          border = "solid",
         },
       }
     end,
