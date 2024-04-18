@@ -30,3 +30,5 @@ lspconfig.yamlls.setup {
     },
   },
 }
+
+require "custom.configs.noice"
