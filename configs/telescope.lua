@@ -2,7 +2,7 @@ local actions = require "telescope.actions"
 
 local M = {
   defaults = {
-    initial_mode = "normal",
+    initial_mode = "insert",
     mappings = {
       n = {
         ["<A-j>"] = actions.cycle_history_next,
