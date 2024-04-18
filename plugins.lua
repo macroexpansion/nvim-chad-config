@@ -29,6 +29,7 @@ local plugins = {
   },
   {
     "NvChad/nvterm",
+    event = "VeryLazy",
     config = function(_, opts)
       require "base46.term"
       local new_opts = require "custom.configs.nvterm"
@@ -273,7 +274,7 @@ local plugins = {
   },
   {
     "NeogitOrg/neogit",
-    lazy = false,
+    event = "VeryLazy",
     config = function()
       require "custom.configs.neogit"
     end,
