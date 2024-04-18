@@ -271,6 +271,19 @@ local plugins = {
       require "custom.configs.nvimlint"
     end,
   },
+  {
+    "NeogitOrg/neogit",
+    lazy = false,
+    config = function()
+      require "custom.configs.neogit"
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+  },
 }
 
 return plugins
