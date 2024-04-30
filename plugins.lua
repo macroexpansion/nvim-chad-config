@@ -105,6 +105,9 @@ local plugins = {
       local new_mapping = require "custom.configs.cmp"
       return vim.tbl_deep_extend("force", opt, new_mapping)
     end,
+    dependencies = {
+      { "hrsh7th/cmp-cmdline" },
+    },
   },
   -- this opts will extend the default opts
   {
