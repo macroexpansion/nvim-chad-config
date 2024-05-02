@@ -8,4 +8,7 @@ return {
     d = "Debugger",
     c = "Current context and mapping cheatsheet",
   },
+  ["g"] = {
+    s = "Toggle mini.splitjoin",
+  },
 }
