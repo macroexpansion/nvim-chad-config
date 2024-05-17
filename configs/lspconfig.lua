@@ -15,6 +15,9 @@ lspconfig.rust_analyzer.setup {
   end,
   settings = {
     ["rust-analyzer"] = {
+      files = {
+        excludeDirs = { ".worktree" },
+      },
       checkOnSave = false,
       imports = {
         granularity = {
