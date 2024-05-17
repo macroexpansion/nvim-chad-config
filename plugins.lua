@@ -304,6 +304,16 @@ local plugins = {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    opts = {},
+    config = function()
+      require "custom.configs.oil"
+    end,
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 }
 
 return plugins
