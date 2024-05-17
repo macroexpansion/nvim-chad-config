@@ -1,6 +1,7 @@
 local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
+    enabled = false,
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = function()
       local opts = require "plugins.configs.nvimtree"
