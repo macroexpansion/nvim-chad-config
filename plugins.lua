@@ -66,12 +66,12 @@ local plugins = {
     opts = {
       search = {
         multi_window = false,
-        -- autojump = true,
+        autojump = true,
       },
       modes = {
         char = {
           jump_labels = true,
-          multi_line = false,
+          multi_line = true,
         },
       },
       label = {
@@ -82,7 +82,32 @@ local plugins = {
         },
       },
     },
-    keys = {},
+    keys = {
+      {
+        "s",
+        mode = { "v" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "S",
+        mode = { "v" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Flash Treesitter Search",
+      },
+      {
+        "<leader>fl",
+        mode = { "n" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
   },
   {
     "phaazon/hop.nvim",
