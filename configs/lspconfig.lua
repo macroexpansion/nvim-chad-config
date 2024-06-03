@@ -11,6 +11,8 @@ lspconfig.rust_analyzer.setup {
       util.ra_flycheck()
     end, { desc = "rust_analyzer run flycheck" })
 
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
     on_attach(client, bufnr)
   end,
   settings = {
