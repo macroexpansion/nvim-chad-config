@@ -229,40 +229,40 @@ local plugins = {
     },
   },
   -- Debugger
-  {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    config = function()
-      require("dapui").setup()
-      require("core.utils").load_mappings "dapui"
-    end,
-    dependencies = {
-      { "mfussenegger/nvim-dap" },
-      { "theHamsta/nvim-dap-virtual-text" },
-    },
-  },
-  {
-    "leoluz/nvim-dap-go",
-    event = "VeryLazy",
-    config = function()
-      require("dap-go").setup {
-        dap_configurations = {
-          {
-            type = "go",
-            name = "Attach remote",
-            mode = "remote",
-            request = "attach",
-          },
-        },
-        delve = {
-          path = "dlv",
-          initialize_timeout_sec = 20,
-          port = "${port}",
-          args = {},
-        },
-      }
-    end,
-  },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("dapui").setup()
+  --     require("core.utils").load_mappings "dapui"
+  --   end,
+  --   dependencies = {
+  --     { "mfussenegger/nvim-dap" },
+  --     { "theHamsta/nvim-dap-virtual-text" },
+  --   },
+  -- },
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("dap-go").setup {
+  --       dap_configurations = {
+  --         {
+  --           type = "go",
+  --           name = "Attach remote",
+  --           mode = "remote",
+  --           request = "attach",
+  --         },
+  --       },
+  --       delve = {
+  --         path = "dlv",
+  --         initialize_timeout_sec = 20,
+  --         port = "${port}",
+  --         args = {},
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "stevearc/conform.nvim",
     lazy = false,
