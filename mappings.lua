@@ -553,28 +553,24 @@ M.trouble = {
   plugin = true,
 
   n = {
-    ["<leader>xx"] = {
-      "<cmd>TroubleToggle<CR>",
-      "Trouble toggle",
-    },
     ["<leader>xw"] = {
-      "<cmd>TroubleToggle workspace_diagnostics<CR>",
+      "<cmd>Trouble diagnostics toggle<cr>",
       "Trouble in workspace",
     },
     ["<leader>xd"] = {
-      "<cmd>TroubleToggle document_diagnostics<CR>",
-      "Trouble in current file",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      "Trouble in current buffer",
     },
     ["<leader>xl"] = {
-      "<cmd>TroubleToggle loclist<CR>",
+      "<cmd>Trouble loclist toggle<cr>",
       "Trouble location list",
     },
     ["<leader>xq"] = {
-      "<cmd>TroubleToggle quickfix<CR>",
+      "<cmd>Trouble qflist toggle<cr>",
       "Trouble quickfix",
     },
     ["<leader>xr"] = {
-      "<cmd>TroubleToggle lsp_references<CR>",
+      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
       "Trouble references",
     },
   },
