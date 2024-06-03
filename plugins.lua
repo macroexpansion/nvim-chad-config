@@ -84,16 +84,16 @@ local plugins = {
     },
     keys = {
       {
-        "s",
-        mode = { "v" },
+        "<leader>vs",
+        mode = { "n" },
         function()
           require("flash").treesitter()
         end,
         desc = "Flash Treesitter",
       },
       {
-        "S",
-        mode = { "v" },
+        "<leader>vS",
+        mode = { "n" },
         function()
           require("flash").treesitter_search()
         end,
