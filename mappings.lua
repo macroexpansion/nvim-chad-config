@@ -154,8 +154,8 @@ M.lspconfig = {
     },
 
     ["<leader>lf"] = {
-      "<cmd>Lspsaga lsp_finder<CR>",
-      "LSP Saga lsp_finder",
+      "<cmd>Lspsaga finder<CR>",
+      "LSP Saga finder",
     },
 
     ["<leader>lgd"] = {
@@ -192,10 +192,8 @@ M.lspconfig = {
     },
 
     ["<leader>lR"] = {
-      function()
-        require("nvchad_ui.renamer").open()
-      end,
-      "LSP rename",
+      "<cmd>Lspsaga rename<CR>",
+      "LSP Saga rename",
     },
 
     ["<leader>lgr"] = {
