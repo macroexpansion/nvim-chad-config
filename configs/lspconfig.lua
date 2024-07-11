@@ -47,6 +47,11 @@ lspconfig.rust_analyzer.setup {
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    python = {
+      pythonPath = "./.venv/bin/python",
+    },
+  },
 }
 
 lspconfig.gopls.setup {

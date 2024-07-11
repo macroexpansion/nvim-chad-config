@@ -3,7 +3,8 @@ local conform = require "conform"
 conform.setup {
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
+    -- python = { "isort", "black" },
+    python = { "ruff_format" },
     -- Use a sub-list to run only the first available formatter
     javascript = { "prettier" },
     typescript = { "prettier" },
