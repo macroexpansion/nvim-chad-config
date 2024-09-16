@@ -10,7 +10,7 @@ conform.setup {
     typescript = { "prettier" },
     lua = { "stylua" },
     rust = { "rustfmt" },
-    go = { "goimports", "gofmt" },
+    go = { "goimports", "golines", "gofmt" },
   },
   format_on_save = {
     timeout_ms = 500,
