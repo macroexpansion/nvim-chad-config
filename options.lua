@@ -1,4 +1,8 @@
+require "nvchad.options"
+
 local opt = vim.opt
+
+opt.cursorlineopt = "both" -- to enable cursorline!
 
 opt.guicursor = "i:block"
 
@@ -18,5 +22,3 @@ opt.relativenumber = true
 opt.nu = true
 opt.hlsearch = true
 opt.incsearch = true
-
-vim.g.nvimtree_side = "right"

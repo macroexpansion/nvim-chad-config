@@ -27,7 +27,7 @@ require("mini.move").setup {
     up = "<A-k>",
   },
 }
-require("mini.comment").setup()
+-- require("mini.comment").setup()
 require("mini.basics").setup()
 -- require 'mini.indentscope'.setup()
 require("mini.trailspace").setup()

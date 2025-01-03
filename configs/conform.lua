@@ -1,6 +1,4 @@
-local conform = require "conform"
-
-conform.setup {
+local options = {
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
     -- python = { "isort", "black" },
@@ -28,10 +26,12 @@ conform.setup {
   },
 }
 
-vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
-  conform.format {
-    timeout_ms = 500,
-    async = false,
-    lsp_fallback = false,
-  }
-end, { desc = "Conform format file or range in visual mode" })
+-- vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
+--   conform.format {
+--     timeout_ms = 500,
+--     async = false,
+--     lsp_fallback = false,
+--   }
+-- end, { desc = "Conform format file or range in visual mode" })
+
+return options
