@@ -5,5 +5,5 @@
  - Clone this repo to `.config/nvim` folder
  ```bash
  cd ~/.config/nvim/lua
- git clone git@github.com:macroexpansion/nvim-chad-config.git custom
- ``` 
+ git clone git@github.com:macroexpansion/nvim-chad-config.git .
+ ```
