@@ -32,6 +32,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
+    enabled = false,
     lazy = false,
     opts = function()
       local opt = require "nvchad.configs.cmp"
@@ -251,5 +252,28 @@ return {
     end,
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require "configs.copilot"
+    end,
+  },
+
+  {
+    "saghen/blink.cmp",
+    lazy = false,
+    -- optional: provides snippets for the snippet source
+    dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
+    config = function()
+      require "configs.blink"
+    end,
+
+    -- use a release tag to download pre-built binaries
+    version = "1.*",
+    opts_extend = { "sources.default" },
   },
 }
