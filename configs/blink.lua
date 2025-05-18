@@ -58,6 +58,15 @@ require("blink.cmp").setup {
   sources = {
     default = { "lsp", "path", "snippets", "buffer", "copilot" },
     providers = {
+      -- cmdline = {
+      --   min_keyword_length = function(ctx)
+      --     -- when typing a command, only show when the keyword is 3 characters or longer
+      --     if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+      --       return 3
+      --     end
+      --     return 0
+      --   end,
+      -- },
       copilot = {
         name = "copilot",
         module = "blink-copilot",
@@ -78,4 +87,26 @@ require("blink.cmp").setup {
   fuzzy = { implementation = "prefer_rust_with_warning" },
 
   signature = { enabled = true },
+
+  cmdline = {
+    keymap = {
+      preset = "cmdline",
+
+      ["<Tab>"] = { "show_and_insert", "select_next" },
+      ["<S-Tab>"] = { "show_and_insert", "select_prev" },
+
+      ["<C-space>"] = { "show", "fallback" },
+
+      ["<C-n>"] = { "select_next", "fallback" },
+      ["<C-p>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<Right>"] = { "select_next", "fallback" },
+      ["<Left>"] = { "select_prev", "fallback" },
+
+      ["<C-y>"] = { "select_and_accept" },
+      ["<C-e>"] = { "cancel" },
+    },
+    completion = { menu = { auto_show = true } },
+  },
 }
