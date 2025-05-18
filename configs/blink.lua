@@ -56,7 +56,7 @@ require("blink.cmp").setup {
   -- Default list of enabled providers defined so that you can extend it
   -- elsewhere in your config, without redefining it, due to `opts_extend`
   sources = {
-    default = { "lsp", "path", "snippets", "buffer", "copilot" },
+    default = { "lsp", "path", "snippets", "buffer", "copilot", "sql" },
     providers = {
       -- cmdline = {
       --   min_keyword_length = function(ctx)
@@ -75,6 +75,28 @@ require("blink.cmp").setup {
         opts = {
           kind_icon = "", ---@type string | false
         },
+      },
+      sql = {
+        -- IMPORTANT: use the same name as you would for nvim-cmp
+        name = "sql",
+        module = "blink.compat.source",
+
+        -- all blink.cmp source config options work as normal:
+        score_offset = -3,
+
+        -- this table is passed directly to the proxied completion source
+        -- as the `option` field in nvim-cmp's source config
+        --
+        -- this is NOT the same as the opts in a plugin's lazy.nvim spec
+        opts = {},
+        should_show_items = function()
+          return vim.tbl_contains(
+            -- Enable completion only for sql file
+            -- By default, enabled for all file-types.
+            { "sql" },
+            vim.o.filetype
+          )
+        end,
       },
     },
   },
