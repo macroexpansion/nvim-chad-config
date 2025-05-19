@@ -286,4 +286,21 @@ return {
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
     opts = {},
   },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    lazy = false,
+    config = function()
+      require "configs.copilot-chat"
+    end,
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+    },
+    build = "make tiktoken", -- yay -S luajit-tiktoken-bin
+    opts = {
+      -- See Configuration section for options
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+  },
 }
