@@ -286,4 +286,16 @@ return {
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
     opts = {},
   },
+
+  {
+    "rest-nvim/rest.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        table.insert(opts.ensure_installed, "http")
+      end,
+    },
+  },
 }
