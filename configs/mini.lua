@@ -20,7 +20,7 @@ require("mini.surround").setup {
     suffix_next = "n", -- Suffix to search with "next" method
   },
 }
--- require('mini.pairs').setup()
+require("mini.pairs").setup()
 require("mini.move").setup {
   mappings = {
     left = "<A-h>",
