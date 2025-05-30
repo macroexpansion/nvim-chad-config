@@ -1,26 +1,35 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason-lspconfig.nvim",
     lazy = false,
-    opts = {
-      ensure_installed = {
-        -- LSP server
-        "black",
-        "delve",
-        "eslint_d",
-        "gofumpt",
-        "goimports",
-        "golines",
-        "gopls",
-        "isort",
-        "lua-language-server",
-        "prettier",
-        "pyright",
-        "rust-analyzer",
-        "stylua",
-        "yaml-language-server",
+    config = function()
+      require "configs.mason"
+    end,
+    dependencies = {
+      {
+        "mason-org/mason.nvim",
+        opts = {
+          ensure_installed = {
+            -- LSP server
+            "black",
+            "delve",
+            "eslint_d",
+            "gofumpt",
+            "goimports",
+            "golines",
+            "gopls",
+            "isort",
+            "lua-language-server",
+            "prettier",
+            "pyright",
+            "rust-analyzer",
+            "stylua",
+            "yaml-language-server",
+          },
+          automatic_installation = true,
+        },
       },
-      automatic_installation = true,
+      "neovim/nvim-lspconfig",
     },
   },
 
@@ -171,7 +180,6 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    -- lazy = false,
     config = function()
       require "configs.noice"
     end,
@@ -181,7 +189,7 @@ return {
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
   },
 

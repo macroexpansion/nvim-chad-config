@@ -88,5 +88,3 @@ lspconfig.yamlls.setup {
     },
   },
 }
-
--- require "configs.noice"
