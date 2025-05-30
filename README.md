@@ -7,3 +7,8 @@
  cd ~/.config/nvim/lua
  git clone git@github.com:macroexpansion/nvim-chad-config.git .
  ```
+
+## add this at the top of `.config/nvim/init.lua`
+```lua
+require("configs.augment").setup_augment_workspace()
+```
