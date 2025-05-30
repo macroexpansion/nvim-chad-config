@@ -262,14 +262,14 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require "configs.copilot"
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require "configs.copilot"
+  --   end,
+  -- },
 
   {
     "saghen/blink.cmp",
@@ -305,5 +305,10 @@ return {
         table.insert(opts.ensure_installed, "http")
       end,
     },
+  },
+
+  {
+    "augmentcode/augment.vim",
+    event = "InsertEnter",
   },
 }
