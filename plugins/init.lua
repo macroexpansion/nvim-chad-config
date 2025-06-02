@@ -262,6 +262,17 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
+  {
+    "refractalize/oil-git-status.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "configs.oil-git-status"
+    end,
+    dependencies = {
+      "stevearc/oil.nvim",
+    },
+  },
+
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = "Copilot",
