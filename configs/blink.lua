@@ -34,6 +34,8 @@ require("blink.cmp").setup {
   completion = {
     documentation = { auto_show = true },
 
+    accept = { auto_brackets = { enabled = true } },
+
     menu = {
       -- nvim-cmp style menu
       draw = {
