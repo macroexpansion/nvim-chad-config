@@ -8,7 +8,8 @@ local options = {
     typescript = { "prettier" },
     lua = { "stylua" },
     rust = { "rustfmt" },
-    go = { "goimports", "golines", "gofmt" },
+    -- go = { "goimports", "golines", "gofmt" },
+    go = { "goimports", "gofmt" },
   },
   format_on_save = {
     timeout_ms = 500,
