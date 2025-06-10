@@ -25,7 +25,7 @@ local nvlsp = require "nvchad.configs.lspconfig"
 lspconfig.rust_analyzer.setup {
   on_attach = function(client, bufnr)
     local util = require "configs.lsputil"
-    vim.keymap.set("n", "<leader>lc", function()
+    vim.keymap.set("n", "<leader>lch", function()
       util.ra_flycheck()
     end, { desc = "rust_analyzer run flycheck" })
 

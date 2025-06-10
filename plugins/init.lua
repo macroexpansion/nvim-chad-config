@@ -1,35 +1,37 @@
 return {
+  -- {
+  --   "mason-org/mason-lspconfig.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require "configs.mason"
+  --   end,
+  --   dependencies = {
+  --     },
+  --     "neovim/nvim-lspconfig",
+  --   },
+  -- },
+
   {
-    "mason-org/mason-lspconfig.nvim",
-    lazy = false,
-    config = function()
-      require "configs.mason"
-    end,
-    dependencies = {
-      {
-        "mason-org/mason.nvim",
-        opts = {
-          ensure_installed = {
-            -- LSP server
-            "black",
-            "delve",
-            "eslint_d",
-            "gofumpt",
-            "goimports",
-            "golines",
-            "gopls",
-            "isort",
-            "lua-language-server",
-            "prettier",
-            "pyright",
-            "rust-analyzer",
-            "stylua",
-            "yaml-language-server",
-          },
-          automatic_installation = true,
-        },
+    "mason-org/mason.nvim",
+    opts = {
+      ensure_installed = {
+        -- LSP server
+        "black",
+        "delve",
+        "eslint_d",
+        "gofumpt",
+        "goimports",
+        "golines",
+        "gopls",
+        "isort",
+        "lua-language-server",
+        "prettier",
+        "pyright",
+        "rust-analyzer",
+        "stylua",
+        "yaml-language-server",
       },
-      "neovim/nvim-lspconfig",
+      automatic_installation = true,
     },
   },
 
@@ -159,6 +161,15 @@ return {
     event = "LspAttach",
     config = function()
       require("lspsaga").setup {
+        callhierarchy = {
+          layout = "normal",
+          keys = {
+            edit = "o",
+          },
+        },
+        finder = {
+          layout = "normal",
+        },
         lightbulb = {
           enable = false,
           enable_in_insert = false,

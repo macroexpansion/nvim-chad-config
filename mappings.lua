@@ -91,6 +91,8 @@ map("n", "<leader>ld", function()
 end, { desc = "LSP definition" })
 map("n", "<leader>lh", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSP Saga hover_doc" })
 map("n", "<leader>lf", "<cmd>Lspsaga finder<CR>", { desc = "LSP Saga finder" })
+map("n", "<leader>lci", "<cmd>Lspsaga incoming_calls<CR>", { desc = "LSP Saga incoming calls" })
+map("n", "<leader>lca", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "LSP Saga outoing calls" })
 map("n", "<leader>lgd", "<cmd>Lspsaga goto_definition<CR>", { desc = "LSP Saga goto_definition" })
 map("n", "<leader>lK", function()
   vim.lsp.buf.hover()
@@ -112,12 +114,12 @@ end, { desc = "LSP references" })
 map("n", "<leader>lx", function()
   vim.diagnostic.open_float { border = "rounded" }
 end, { desc = "Floating diagnostic" })
-map("n", "<leader>lk", function()
-  vim.diagnostic.goto_prev { float = { border = "rounded" } }
-end, { desc = "Goto prev" })
-map("n", "<leader>lj", function()
-  vim.diagnostic.goto_next { float = { border = "rounded" } }
-end, { desc = "Goto next" })
+-- map("n", "<leader>lk", function()
+--   vim.diagnostic.goto_prev { float = { border = "rounded" } }
+-- end, { desc = "Goto prev" })
+-- map("n", "<leader>lj", function()
+--   vim.diagnostic.goto_next { float = { border = "rounded" } }
+-- end, { desc = "Goto next" })
 map("n", "<leader>lq", function()
   vim.diagnostic.setloclist()
 end, { desc = "Diagnostic setloclist" })
