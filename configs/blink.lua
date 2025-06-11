@@ -60,6 +60,18 @@ require("blink.cmp").setup {
   sources = {
     default = { "lsp", "path", "snippets", "buffer", "copilot", "sql" },
     providers = {
+      buffer = {
+        opts = {
+          -- get all buffers, even ones like neo-tree
+          -- get_bufnrs = vim.api.nvim_list_bufs,
+          -- or (recommended) filter to only "normal" buffers
+          get_bufnrs = function()
+            return vim.tbl_filter(function(bufnr)
+              return vim.bo[bufnr].buftype == ""
+            end, vim.api.nvim_list_bufs())
+          end,
+        },
+      },
       -- cmdline = {
       --   min_keyword_length = function(ctx)
       --     -- when typing a command, only show when the keyword is 3 characters or longer
