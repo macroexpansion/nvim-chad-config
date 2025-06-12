@@ -12,6 +12,53 @@ return {
   -- },
 
   {
+    "folke/snacks.nvim",
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      dashboard = {
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+
+          {
+            pane = 2,
+            section = "terminal",
+            cmd = "echo 'Hello World!'",
+            height = 5,
+            padding = 1,
+          },
+          { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Git Status",
+            section = "terminal",
+            enabled = function()
+              return Snacks.git.get_root() ~= nil
+            end,
+            cmd = "git status --short --branch --renames",
+            height = 5,
+            padding = 1,
+            ttl = 5 * 60,
+            indent = 3,
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    opts = {
+      -- add any custom options here
+    },
+  },
+
+  {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
@@ -101,7 +148,7 @@ return {
   {
     "echasnovski/mini.nvim",
     version = "*",
-    lazy = false,
+    lazy = "VeryLazy",
     config = function()
       require "configs.mini"
     end,
