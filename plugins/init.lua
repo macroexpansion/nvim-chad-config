@@ -25,8 +25,8 @@ return {
           {
             pane = 2,
             section = "terminal",
-            cmd = "echo 'Hello World!'",
-            height = 5,
+            cmd = 'echo "Hello, $USER !"',
+            height = 7,
             padding = 1,
           },
           { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
