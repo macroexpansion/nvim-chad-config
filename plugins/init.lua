@@ -367,7 +367,7 @@ return {
 
   {
     "rest-nvim/rest.nvim",
-    lazy = false,
+    event = "VeryLazy",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
