@@ -51,6 +51,7 @@ return {
   },
 
   {
+    -- save to ~/.local/state/nvim/sessions/
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
     opts = {
