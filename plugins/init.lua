@@ -127,21 +127,27 @@ return {
   -- FIX: fix
   -- TODO: todo
   -- WARNING: todo
+  -- INFO: info
   {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
-    -- dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "todo")
+      require("todo-comments").setup(opts)
+    end,
   },
 
   {
     "folke/trouble.nvim",
     event = "VeryLazy",
     config = function()
+      dofile(vim.g.base46_cache .. "trouble")
       require("trouble").setup()
     end,
   },
@@ -255,6 +261,10 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "flash")
+      require("flash").setup(opts)
+    end,
     opts = {
       search = {
         multi_window = false,
@@ -306,6 +316,7 @@ return {
     "hadronized/hop.nvim",
     lazy = false,
     config = function()
+      dofile(vim.g.base46_cache .. "hop")
       require "configs.hop"
     end,
   },
@@ -347,6 +358,7 @@ return {
     -- optional: provides snippets for the snippet source
     dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot", "ray-x/cmp-sql" },
     config = function()
+      dofile(vim.g.base46_cache .. "blink")
       require "configs.blink"
     end,
 

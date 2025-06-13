@@ -8,6 +8,8 @@ local M = {}
 M.base46 = {
   theme = "gruvchad",
 
+  integrations = { "git-conflict", "blink", "diffview", "todo", "trouble", "hop", "flash" },
+
   -- hl_override = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
