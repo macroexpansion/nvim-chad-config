@@ -35,5 +35,12 @@ return {
       theme = "dropdown",
       previewer = false,
     },
+    buffers = {
+      mappings = {
+        n = {
+          ["dd"] = actions.delete_buffer + actions.move_to_top,
+        },
+      },
+    },
   },
 }
