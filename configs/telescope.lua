@@ -1,6 +1,6 @@
 local actions = require "telescope.actions"
 
-local M = {
+return {
   defaults = {
     initial_mode = "insert",
     mappings = {
@@ -30,6 +30,10 @@ local M = {
       preview_cutoff = 120,
     },
   },
+  pickers = {
+    builtin = {
+      theme = "dropdown",
+      previewer = false,
+    },
+  },
 }
-
-return M

@@ -70,10 +70,12 @@ map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find o
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
 map("n", "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
 map("n", "<leader>fs", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "Find all" })
 map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Resume last search" })
+map("n", "<leader>ft", function()
+  require("telescope.builtin").builtin {}
+end, { desc = "Telescope built-in pickers" })
 
 -- trouble
 map("n", "<leader>xw", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Trouble in workspace" })

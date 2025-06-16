@@ -1,15 +1,14 @@
 return {
-  -- {
-  --   "mason-org/mason-lspconfig.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require "configs.mason"
-  --   end,
-  --   dependencies = {
-  --     },
-  --     "neovim/nvim-lspconfig",
-  --   },
-  -- },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    cmd = "Telescope",
+    opts = function()
+      local opt = require "nvchad.configs.telescope"
+      local new_mapping = require "configs.telescope"
+      return vim.tbl_deep_extend("force", opt, new_mapping)
+    end,
+  },
 
   {
     "nvchad/base46",
