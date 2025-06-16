@@ -12,6 +12,14 @@ return {
   -- },
 
   {
+    "nvchad/base46",
+    version = "v3.0",
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
+
+  {
     "folke/snacks.nvim",
     lazy = false,
     ---@type snacks.Config
