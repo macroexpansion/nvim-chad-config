@@ -398,7 +398,7 @@ return {
 
   {
     "augmentcode/augment.vim",
-    event = "InsertEnter",
+    event = "BufReadPre",
   },
 
   {
