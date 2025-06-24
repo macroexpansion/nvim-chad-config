@@ -162,7 +162,7 @@ return {
   {
     "echasnovski/mini.nvim",
     version = "*",
-    lazy = "VeryLazy",
+    event = "BufReadPre",
     config = function()
       require "configs.mini"
     end,
