@@ -6,6 +6,8 @@ local options = {
     -- Use a sub-list to run only the first available formatter
     javascript = { "prettier" },
     typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    javascriptreact = { "prettier" },
     lua = { "stylua" },
     rust = { "rustfmt" },
     -- go = { "goimports", "golines", "gofmt" },
