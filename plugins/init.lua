@@ -436,10 +436,11 @@ return {
     },
   },
 
-  -- {
-  --   "augmentcode/augment.vim",
-  --   event = "BufReadPre",
-  -- },
+  {
+    "augmentcode/augment.vim",
+    event = "BufReadPre",
+    branch = "prerelease",
+  },
 
   {
     "akinsho/git-conflict.nvim",
