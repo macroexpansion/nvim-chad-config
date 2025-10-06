@@ -1,5 +1,14 @@
 return {
   {
+    "julienvincent/hunk.nvim",
+    event = "VeryLazy",
+    cmd = { "DiffEditor" },
+    config = function()
+      require "configs.hunk"
+    end,
+  },
+
+  {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     -- event = "BufReadPre",
