@@ -12,6 +12,8 @@ local options = {
     rust = { "rustfmt" },
     -- go = { "goimports", "golines", "gofmt" },
     go = { "goimports", "gofmt" },
+    jsonnet = { "jsonnetfmt" },
+    jsonc = { "prettier" },
   },
   format_on_save = {
     timeout_ms = 500,
