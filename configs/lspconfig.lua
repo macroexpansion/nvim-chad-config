@@ -62,15 +62,8 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
-lspconfig.pyright.setup {
-  on_attach = nvlsp.on_attach,
-  capabilities = nvlsp.capabilities,
-  settings = {
-    python = {
-      pythonPath = "./.venv/bin/python",
-    },
-  },
-}
+-- Required: Enable the language server
+vim.lsp.enable "ty"
 
 lspconfig.gopls.setup {
   on_attach = nvlsp.on_attach,

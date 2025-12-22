@@ -21,6 +21,7 @@ return {
 
   {
     "coder/claudecode.nvim",
+    enabled = false,
     dependencies = { "folke/snacks.nvim" },
     -- event = "BufReadPre",
     config = true,
@@ -132,7 +133,6 @@ return {
       ensure_installed = {
         -- LSP server
         "black",
-        "delve",
         "eslint_d",
         "gofumpt",
         "goimports",
@@ -141,11 +141,11 @@ return {
         "isort",
         "lua-language-server",
         "prettier",
-        "pyright",
         "rust-analyzer",
         "stylua",
         "yaml-language-server",
         "jsonnet",
+        "ty",
       },
       automatic_installation = true,
     },
