@@ -63,6 +63,20 @@ lspconfig.rust_analyzer.setup {
 }
 
 -- Required: Enable the language server
+vim.lsp.config("ty", {
+  settings = {
+    ty = {
+      disableLanguageServices = false,
+      inlayHints = {
+        variableTypes = true,
+      },
+      diagnosticMode = "workspace", -- Value: "workspace" | "openFilesOnly"
+      completions = {
+        autoImport = true,
+      },
+    },
+  },
+})
 vim.lsp.enable "ty"
 
 lspconfig.gopls.setup {
