@@ -1,10 +1,9 @@
--- load defaults i.e lua_lsplsp
+-- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
-lspconfig.rust_analyzer.setup {
+vim.lsp.config("rust_analyzer", {
   on_attach = function(client, bufnr)
     local util = require "configs.lsputil"
     vim.keymap.set("n", "<leader>lch", function()
@@ -42,9 +41,9 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
-}
+})
+vim.lsp.enable "rust_analyzer"
 
--- Required: Enable the language server
 vim.lsp.config("ty", {
   settings = {
     ty = {
@@ -52,7 +51,7 @@ vim.lsp.config("ty", {
       inlayHints = {
         variableTypes = true,
       },
-      diagnosticMode = "workspace", -- Value: "workspace" | "openFilesOnly"
+      diagnosticMode = "workspace",
       completions = {
         autoImport = true,
       },
@@ -61,12 +60,13 @@ vim.lsp.config("ty", {
 })
 vim.lsp.enable "ty"
 
-lspconfig.gopls.setup {
+vim.lsp.config("gopls", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-}
+})
+vim.lsp.enable "gopls"
 
-lspconfig.yamlls.setup {
+vim.lsp.config("yamlls", {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
   settings = {
@@ -76,4 +76,5 @@ lspconfig.yamlls.setup {
       },
     },
   },
-}
+})
+vim.lsp.enable "yamlls"
