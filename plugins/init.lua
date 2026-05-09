@@ -464,12 +464,6 @@ return {
   },
 
   {
-    "augmentcode/augment.vim",
-    event = "BufReadPre",
-    branch = "prerelease",
-  },
-
-  {
     "akinsho/git-conflict.nvim",
     event = "VeryLazy",
     version = "v2.1.0",
