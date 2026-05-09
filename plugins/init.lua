@@ -231,6 +231,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
         "bash",
@@ -253,6 +255,8 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "http",
+        "go",
       },
       incremental_selection = {
         enable = true,
@@ -271,7 +275,11 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    lazy = true,
+    branch = "main",
+    -- lazy = true,
+    init = function()
+      vim.g.no_plugin_maps = true
+    end,
     config = function()
       require "configs.textobjects"
     end,
