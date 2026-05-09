@@ -20,33 +20,6 @@ return {
   },
 
   {
-    "coder/claudecode.nvim",
-    enabled = false,
-    dependencies = { "folke/snacks.nvim" },
-    -- event = "BufReadPre",
-    config = true,
-    keys = {
-      -- { "<leader>ca", nil, desc = "AI/Claude Code" },
-      { "<leader>cac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-      { "<leader>caf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-      { "<leader>car", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
-      { "<leader>caC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
-      { "<leader>cam", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-      { "<leader>cab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-      { "<leader>cas", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
-      {
-        "<leader>cas",
-        "<cmd>ClaudeCodeTreeAdd<cr>",
-        desc = "Add file",
-        ft = { "NvimTree", "neo-tree", "oil", "minifiles" },
-      },
-      -- Diff management
-      { "<leader>caa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-      { "<leader>cad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
-    },
-  },
-
-  {
     "pmizio/typescript-tools.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -395,7 +368,7 @@ return {
   },
 
   {
-    "hadronized/hop.nvim",
+    "smoka7/hop.nvim",
     lazy = false,
     config = function()
       dofile(vim.g.base46_cache .. "hop")
