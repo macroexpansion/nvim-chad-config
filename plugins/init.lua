@@ -265,7 +265,7 @@ return {
   },
   -- LSP Saga
   {
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     lazy = true,
     event = "LspAttach",
     config = function()
@@ -277,7 +277,7 @@ return {
           },
         },
         finder = {
-          layout = "normal",
+          layout = "float",
         },
         lightbulb = {
           enable = false,
@@ -441,6 +441,7 @@ return {
         opts.ensure_installed = opts.ensure_installed or {}
         table.insert(opts.ensure_installed, "http")
       end,
+      "j-hui/fidget.nvim",
     },
   },
 
