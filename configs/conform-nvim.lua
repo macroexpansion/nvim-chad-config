@@ -24,7 +24,7 @@ local options = {
   formatters = {
     rustfmt = {
       command = "rustfmt",
-      args = { "--edition", "2021" },
+      args = { "--edition", "2024" },
     },
     gofmt = {
       command = "gofmt",
