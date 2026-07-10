@@ -1,6 +1,6 @@
 local M = {}
 
-M.get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
+M.get_clients = vim.lsp.get_clients
 
 M.ra_flycheck = function()
   local client_found = false
