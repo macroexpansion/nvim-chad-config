@@ -435,6 +435,13 @@ return {
   {
     "rest-nvim/rest.nvim",
     event = "VeryLazy",
+    init = function()
+      vim.g.rest_nvim = {
+        request = {
+          skip_ssl_verification = true,
+        },
+      }
+    end,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
