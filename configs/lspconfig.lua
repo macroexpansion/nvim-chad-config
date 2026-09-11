@@ -3,6 +3,18 @@ require("nvchad.configs.lspconfig").defaults()
 
 local nvlsp = require "nvchad.configs.lspconfig"
 
+vim.lsp.config("rust_glancer", {
+  cmd = { "rust-glancer", "lsp" },
+  root_markers = { "Cargo.toml", ".git" },
+  init_options = {
+    diagnostics = {
+      onSave = true,
+      onStartup = true,
+    },
+  },
+})
+-- vim.lsp.enable "rust_glancer"
+
 vim.lsp.config("rust_analyzer", {
   on_attach = function(client, bufnr)
     local util = require "configs.lsputil"
@@ -42,7 +54,7 @@ vim.lsp.config("rust_analyzer", {
     },
   },
 })
-vim.lsp.enable "rust_analyzer"
+-- vim.lsp.enable "rust_analyzer"
 
 vim.lsp.config("ty", {
   settings = {
